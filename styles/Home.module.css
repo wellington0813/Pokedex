@@ -6,34 +6,33 @@
   list-style: none;
   padding: 0 15px;
 }
-
-.col ul {
+.col{
+  list-style: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
 }
-
 .card {
   border: 1px solid #ccc;
   display: flex;
   padding: 15px;
   border-radius: 20px;
   position: relative;
+  height: 110px;
+  color: #fff;
 }
 .nomeTipos {
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 .nomeTipos h3 {
   margin: 0;
   color: #fff;
   text-transform: capitalize;
 }
-.image {
-  position: absolute;
-  right: -15px;
-  top: 0px;
-}
+
 
 .tipo {
   color: #000;
@@ -51,4 +50,70 @@
   display: flex;
   flex-shrink: wrap;
   flex-direction: column;
+}
+.imagem{
+  position: absolute;
+  right: -15px;
+  top: 0px;
+}
+
+.Info {
+  padding: 0 15px;
+}
+
+.Info .imagen {
+  display: block;
+  margin: 0 auto;
+}
+
+.masInfo {
+  border-radius: 30px;
+  height: 100px;
+  margin-top: -50px;
+  background-color: #fff;
+}
+.nombre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.nombre h1 {
+  color: #fff;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.nombre span {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.Info .tipo {
+  color: #fff;
+  background-color: rgba(255, 255, 230, 0.3);
+  margin-bottom: 4px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 2px 10px;
+  text-transform: capitalize;
+  font-size: 14px;
+  place-self: flex-start;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.Info .tipo h3 {
+  margin: 0;
+}
+
+.Info .tipos {
+  display: flex;
+}
+
+.navegacion {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }

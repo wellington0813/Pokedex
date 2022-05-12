@@ -13,7 +13,7 @@ export async function getServerSideProps(){
   }
 
   let arraypokemons = []
-  for (let i = 1; i <= 20; i ++){
+  for (let i = 1; i <= 400; i ++){
     let data = await getPokemon(i)
     arraypokemons.push(data)
   }
@@ -40,13 +40,17 @@ export default function Home({ListaPokemons}) {
   console.log('ListaPokemons', ListaPokemons)
   return (
     <>
+    <Header></Header>
       <ul className={styles.col}>
         {ListaPokemons.map((pokemon, index) =>{
             return(
               <li>
-                <Link href=''>
+                <Link href={{
+                  pathname: 'pokemon/[name]',
+                  query: {name: pokemon.name}
+                }}>
                   <a>
-                    <div className={styles.card}>
+                    <div className={`${styles.card} ${pokemon.types[0].type.name}`}>
                       <div className={styles.nometipos}>
                         <h3>{pokemon.name}</h3>
                         <div className={styles.tipos}>
@@ -58,8 +62,13 @@ export default function Home({ListaPokemons}) {
                             )
                           })}
                         </div>
-                        <Image src={pokemon.image} height='100' width={100} className={styles.image}/>
                       </div>
+                      <img 
+                        src={pokemon.image} 
+                        height='100' 
+                        width={100} 
+                        className={styles.imagem}
+                      />
                     </div>
                   </a>
                 </Link>
